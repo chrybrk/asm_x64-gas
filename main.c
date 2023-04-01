@@ -2,12 +2,9 @@
 
 int main(void)
 {
-    int i = 10;
-    while (i != 1)
-    {
-        int a = i % 2;
-        i--;
-    }
+    int array[4];
+    for (int i = 0; i < 4; i++)
+        array[i] = 10 * i;
 
     return 0;
 }

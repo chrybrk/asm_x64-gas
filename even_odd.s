@@ -17,17 +17,20 @@ main:
 
     subq    $16, %rsp
 
+    movl    $1000000, -4(%rbp) # range
+
+    addl    $1, -4(%rbp)
     movl    $1, -12(%rbp) # n: var
 .L0:
 
-	movl	-12(%rbp), %edx
-	movl	%edx, %eax
-	sarl	$31, %eax
-	shrl	$31, %eax
-	addl	%eax, %edx
-	andl	$1, %edx
-	subl	%eax, %edx
-	movl	%edx, -8(%rbp)
+    movl	-12(%rbp), %edx
+    movl	%edx, %eax
+    sarl	$31, %eax
+    shrl	$31, %eax
+    addl	%eax, %edx
+    andl	$1, %edx
+    subl	%eax, %edx
+    movl	%edx, -8(%rbp) # r: var
 
     cmpl    $0, -8(%rbp)
     jne     .L1
@@ -52,11 +55,12 @@ main:
 
 .L2:
     addl    $1, -12(%rbp)
-    cmpl    $11, -12(%rbp)
+    movl    -4(%rbp), %eax
+    cmpl    %eax, -12(%rbp)
     jne     .L0
 
     addq    $16, %rsp
 
-	movl	$0, %eax
-	popq	%rbp
-	ret
+    movl	$0, %eax
+    popq	%rbp
+    ret
