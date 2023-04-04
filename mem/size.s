@@ -56,11 +56,11 @@ main:
 
     movq    %rax, %r8
 
-	movl	-12(%rbp), %eax
-	cltq
-	leaq	0(,%rax,4), %rdx
-	movq	-8(%rbp), %rax
-	addq	%rdx, %rax
+    movl	-12(%rbp), %eax
+    cltq
+    leaq	0(,%rax,4), %rdx
+    movq	-8(%rbp), %rax
+    addq	%rdx, %rax
     movq    %r8, (%rax)
 
     addl    $1, -12(%rbp)
@@ -69,17 +69,17 @@ main:
 
     movl    $0, -12(%rbp)
 .L1:
-	movl	-12(%rbp), %eax
-	cltq
-	leaq	0(,%rax,4), %rdx
-	movq	-8(%rbp), %rax
-	addq	%rdx, %rax
-	movl	(%rax), %eax
-	movl	%eax, %esi
-	leaq	.Tresult(%rip), %rax
-	movq	%rax, %rdi
-	movl	$0, %eax
-	call	printf@PLT
+    movl	-12(%rbp), %eax
+    cltq
+    leaq	0(,%rax,4), %rdx
+    movq	-8(%rbp), %rax
+    addq	%rdx, %rax
+    movl	(%rax), %eax
+    movl	%eax, %esi
+    leaq	.Tresult(%rip), %rax
+    movq	%rax, %rdi
+    movl	$0, %eax
+    call	printf@PLT
 
     addl    $1, -12(%rbp)
     cmpl    $4, -12(%rbp)
