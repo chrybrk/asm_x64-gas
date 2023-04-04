@@ -17,7 +17,7 @@ main:
 
     subq    $16, %rsp
 
-    movl    $1000000, -4(%rbp) # range
+    movl    $100, -4(%rbp) # range
 
     addl    $1, -4(%rbp)
     movl    $1, -12(%rbp) # n: var
@@ -63,4 +63,3 @@ main:
 
     movl	$0, %eax
     popq	%rbp
-    ret
