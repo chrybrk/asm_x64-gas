@@ -1,16 +1,24 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int main(void)
 {
-    int *array;
-    array[0] = 10;
-    array[1] = 20;
-    array[2] = 30;
-    array[3] = 40;
-    array[4] = 50;
+    printf("size: ");
+    int size;
+    scanf("%d", &size);
 
-    for (int i = 0; i < 5; i++)
-        printf("%d\n", array[i]);
+    int *array = calloc(size, sizeof(int));
+    
+    for (int i = 0; i < size; i++)
+    {
+        printf("v: ");
+        scanf("%d", &array[i]);
+    }
+
+    for (int i = 0; i < size; i++)
+        printf("result: %d\n", array[i]);
+
+    free(array);
 
     return 0;
 }

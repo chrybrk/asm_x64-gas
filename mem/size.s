@@ -64,7 +64,7 @@ main:
     movq    %r8, (%rax)
 
     addl    $1, -12(%rbp)
-    cmpl    $4, -12(%rbp)
+    cmpl    $5, -12(%rbp)
     jle     .L0
 
     movl    $0, -12(%rbp)
@@ -82,7 +82,7 @@ main:
     call	printf@PLT
 
     addl    $1, -12(%rbp)
-    cmpl    $4, -12(%rbp)
+    cmpl    $5, -12(%rbp)
     jle     .L1
 
     addq    $16, %rsp
