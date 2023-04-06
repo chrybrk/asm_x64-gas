@@ -15,8 +15,12 @@ int main(void)
         scanf("%d", &array[i]);
     }
 
+    int s = 0;
+
     for (int i = 0; i < size; i++)
-        printf("result: %d\n", array[i]);
+        s += array[i];
+
+    printf("result: %d\n", s);
 
     free(array);
 

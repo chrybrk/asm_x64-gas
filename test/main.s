@@ -28,26 +28,26 @@ main:
 	movq	%rax, %rdi
 	movl	$0, %eax
 	call	printf@PLT
-	leaq	-28(%rbp), %rax
+	leaq	-32(%rbp), %rax
 	movq	%rax, %rsi
 	leaq	.LC1(%rip), %rax
 	movq	%rax, %rdi
 	movl	$0, %eax
 	call	__isoc99_scanf@PLT
-	movl	-28(%rbp), %eax
+	movl	-32(%rbp), %eax
 	cltq
 	movl	$4, %esi
 	movq	%rax, %rdi
 	call	calloc@PLT
 	movq	%rax, -16(%rbp)
-	movl	$0, -24(%rbp)
+	movl	$0, -28(%rbp)
 	jmp	.L2
 .L3:
 	leaq	.LC2(%rip), %rax
 	movq	%rax, %rdi
 	movl	$0, %eax
 	call	printf@PLT
-	movl	-24(%rbp), %eax
+	movl	-28(%rbp), %eax
 	cltq
 	leaq	0(,%rax,4), %rdx
 	movq	-16(%rbp), %rax
@@ -57,11 +57,12 @@ main:
 	movq	%rax, %rdi
 	movl	$0, %eax
 	call	__isoc99_scanf@PLT
-	addl	$1, -24(%rbp)
+	addl	$1, -28(%rbp)
 .L2:
-	movl	-28(%rbp), %eax
-	cmpl	%eax, -24(%rbp)
+	movl	-32(%rbp), %eax
+	cmpl	%eax, -28(%rbp)
 	jl	.L3
+	movl	$0, -24(%rbp)
 	movl	$0, -20(%rbp)
 	jmp	.L4
 .L5:
@@ -71,16 +72,18 @@ main:
 	movq	-16(%rbp), %rax
 	addq	%rdx, %rax
 	movl	(%rax), %eax
+	addl	%eax, -24(%rbp)
+	addl	$1, -20(%rbp)
+.L4:
+	movl	-32(%rbp), %eax
+	cmpl	%eax, -20(%rbp)
+	jl	.L5
+	movl	-24(%rbp), %eax
 	movl	%eax, %esi
 	leaq	.LC3(%rip), %rax
 	movq	%rax, %rdi
 	movl	$0, %eax
 	call	printf@PLT
-	addl	$1, -20(%rbp)
-.L4:
-	movl	-28(%rbp), %eax
-	cmpl	%eax, -20(%rbp)
-	jl	.L5
 	movq	-16(%rbp), %rax
 	movq	%rax, %rdi
 	call	free@PLT
