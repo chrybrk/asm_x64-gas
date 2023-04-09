@@ -18,10 +18,10 @@ LESSON: never try to learn asm, it's hard.
 - [x] Pattern
 - [x] Calculator
 - [x] Mem allocation or better understanding of stack frame
-- [ ] Fibonacci Sequence
-- [ ] Prime Number
+- [x] Fibonacci Sequence
+- [x] Collatz Conjecture
+- [ ] Bubble Sort
 - [ ] Binary to Decimal
-- [ ] Unit Converter
 - [ ] Luhn Algorithm (Credit Card Validator)
 - [ ] Stack Based Maths
 

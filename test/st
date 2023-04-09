@@ -1,0 +1,42 @@
+        movl    -24(%rbp), %eax
+        cltq
+        leaq    0(,%rax,4), %rdx
+        movq    -4(%rbp), %rax
+        addq    %rdx, %rax
+        movl    (%rax), %eax
+
+        movl    %eax, -16(%rbp) # i_value
+
+        movl    -20(%rbp), %eax
+        cltq
+        leaq    0(,%rax,4), %rdx
+        movq    -4(%rbp), %rax
+        addq    %rdx, %rax
+        movl    (%rax), %eax
+
+        movl    %eax, -12(%rbp) # j_value
+
+        movl    -12(%rbp), %eax
+        cmpl    %eax, -16(%rbp)
+        jl      .L3
+
+movl    -20(%rbp), %eax
+movl    -20(%rbp), %eax
+
+cltq
+cltq
+
+leaq    0(,%rax,4), %rdx
+leaq    0(,%rax,4), %rdx
+
+movq    -4(%rbp), %rax
+movq    -4(%rbp), %rax
+
+addq    %rdx, %rax
+addq    %rdx, %rax
+
+movl    (%rax), %eax
+movl    (%rax), %eax
+
+movl    %eax, -12(%rbp) # j_value
+movl    %eax, -12(%rbp) # j_value

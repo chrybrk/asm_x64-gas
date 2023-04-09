@@ -3,26 +3,13 @@
 
 int main(void)
 {
-    printf("size: ");
-    int size;
-    scanf("%d", &size);
+    int* array = calloc(2, sizeof(int));
+    array[0] = 10;
+    array[1] = 20;
 
-    int *array = calloc(size, sizeof(int));
-    
-    for (int i = 0; i < size; i++)
-    {
-        printf("v: ");
-        scanf("%d", &array[i]);
-    }
-
-    int s = 0;
-
-    for (int i = 0; i < size; i++)
-        s += array[i];
-
-    printf("result: %d\n", s);
-
-    free(array);
+    int temp = array[0];
+    array[0] = array[1];
+    array[1] = temp;
 
     return 0;
 }
