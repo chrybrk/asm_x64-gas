@@ -1,17 +1,10 @@
 import random
 
-x = [ i for i in range(10, 110, 10) ]
-a = []
+values = [ random.choice([0, 1]) for i in range(11) ]
+print(values)
+s = 0
 
-while x:
-    a.append(random.choice(x))
-    x.pop(x.index(a[len(a) - 1]))
+for i in range(len(values)):
+    s += ((2 ** (len(values) - i - 1)) * values[i])
 
-print(a)
-
-for i in range(len(a)):
-    for j in range(len(a)):
-        if a[i] < a[j]:
-            a[i], a[j] = a[j], a[i]
-
-print(a)
+print(s)

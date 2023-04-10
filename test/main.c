@@ -1,15 +1,26 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+int power(int b, int e)
+{
+    int total = 1;
+    for (int i = 0; i < e; i++) total = total * b;
+
+    return total;
+}
+
 int main(void)
 {
-    int* array = calloc(2, sizeof(int));
-    array[0] = 10;
-    array[1] = 20;
+    int size = 4;
+    int array[] = { 1, 0, 0, 0 };
+    int sum = 0;
 
-    int temp = array[0];
-    array[0] = array[1];
-    array[1] = temp;
+    for (int i = 0; i < size; i++)
+    {
+        sum = sum + (power(2, size - i - 1) * array[i]);
+    }
+
+    printf("%d\n", sum);
 
     return 0;
 }

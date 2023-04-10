@@ -20,7 +20,7 @@ LESSON: never try to learn asm, it's hard.
 - [x] Mem allocation or better understanding of stack frame
 - [x] Fibonacci Sequence
 - [x] Collatz Conjecture
-- [ ] Bubble Sort
+- [x] Bubble Sort
 - [ ] Binary to Decimal
 - [ ] Luhn Algorithm (Credit Card Validator)
 - [ ] Stack Based Maths
