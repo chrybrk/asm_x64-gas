@@ -21,9 +21,9 @@ LESSON: never try to learn asm, it's hard.
 - [x] Fibonacci Sequence
 - [x] Collatz Conjecture
 - [x] Bubble Sort
-- [ ] Binary to Decimal
+- [x] Binary to Decimal
+- [x] Stack Based Maths
 - [ ] Luhn Algorithm (Credit Card Validator)
-- [ ] Stack Based Maths
 
 # Future Goals
 
